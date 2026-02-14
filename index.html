@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Free BMI Calculator - Calculate Your Body Mass Index Online</title>
+    <meta name="description" content="Free BMI calculator to check your Body Mass Index. Calculate BMI using metric or imperial units. Get instant results with health recommendations and weight category analysis.">
+    <meta name="keywords" content="BMI calculator, body mass index, BMI chart, calculate BMI, healthy weight, weight calculator, BMI for adults, obesity calculator">
+    <meta name="author" content="BMI Health Calculator">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Free BMI Calculator - Check Your Body Mass Index">
+    <meta property="og:description" content="Calculate your BMI instantly with our free online calculator. Get personalized health insights and recommendations.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free BMI Calculator">
+    <meta name="twitter:description" content="Calculate your Body Mass Index and get health recommendations instantly">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourwebsite.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚖️</text></svg>">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚖️ BMI Calculator</h1>
+            <p class="subtitle">Calculate Your Body Mass Index & Get Health Insights</p>
+        </header>
+        
+        <main>
+            <section class="intro">
+                <p>Body Mass Index (BMI) is a measure of body fat based on your height and weight. Use our free BMI calculator to check if you're at a healthy weight for your height.</p>
+            </section>
+            
+            <section class="calculator-section">
+                <div class="input-group">
+                    <label for="age">Age (Optional)</label>
+                    <div class="input-container">
+                        <input type="number" id="age" placeholder="Enter your age" min="2" max="120">
+                        <span class="unit-label">
+                            <select class="unit-select">
+                                <option value="years">years</option>
+                            </select>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label>Gender (Optional)</label>
+                    <div class="gender-toggle">
+                        <button class="unit-btn" id="male-btn">Male</button>
+                        <button class="unit-btn" id="female-btn">Female</button>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="height">Height</label>
+                    <div class="input-container">
+                        <input type="number" id="height" placeholder="Enter height" min="1" step="0.1">
+                        <span class="unit-label">
+                            <select class="unit-select" id="height-unit">
+                                <option value="cm">cm</option>
+                                <option value="m">m</option>
+                                <option value="ft">ft</option>
+                                <option value="in">in</option>
+                            </select>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="weight">Weight</label>
+                    <div class="input-container">
+                        <input type="number" id="weight" placeholder="Enter weight" min="1" step="0.1">
+                        <span class="unit-label">
+                            <select class="unit-select" id="weight-unit">
+                                <option value="kg">kg</option>
+                                <option value="lbs">lbs</option>
+                                <option value="st">stone</option>
+                            </select>
+                        </span>
+                    </div>
+                </div>
+                
+                <button class="calculate-btn" id="calculateBtn">Calculate BMI</button>
+            </section>
+            
+            <section class="result-section" id="resultSection">
+                <div class="bmi-score">
+                    <div class="bmi-number" id="bmiNumber">--</div>
+                    <div class="bmi-category" id="bmiCategory">--</div>
+                    <div class="bmi-range" id="bmiRange">--</div>
+                </div>
+                
+                <div class="bmi-gauge">
+                    <div class="bmi-pointer" id="bmiPointer"></div>
+                </div>
+                <div class="category-labels">
+                    <span>Underweight</span>
+                    <span>Normal</span>
+                    <span>Overweight</span>
+                    <span>Obese</span>
+                </div>
+                
+                <div class="health-advice" id="healthAdvice"></div>
+                
+                <div class="ideal-weight" id="idealWeight"></div>
+            </section>
+            
+            <section class="history-section" id="historySection">
+                <h3>📊 Your BMI History</h3>
+                <div class="history-list" id="historyList"></div>
+                <button class="clear-history" id="clearHistory">Clear History</button>
+            </section>
+            
+            <section class="bmi-chart">
+                <h2>BMI Chart & Categories</h2>
+                <table class="chart-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>BMI Range</th>
+                            <th>Health Risk</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="category-indicator underweight"></span>Underweight</td>
+                            <td>Below 18.5</td>
+                            <td>Nutritional deficiency, osteoporosis</td>
+                        </tr>
+                        <tr>
+                            <td><span class="category-indicator normal"></span>Normal Weight</td>
+                            <td>18.5 - 24.9</td>
+                            <td>Minimal health risk</td>
+                        </tr>
+                        <tr>
+                            <td><span class="category-indicator overweight"></span>Overweight</td>
+                            <td>25.0 - 29.9</td>
+                            <td>Increased risk of cardiovascular disease</td>
+                        </tr>
+                        <tr>
+                            <td><span class="category-indicator obese"></span>Obese Class I</td>
+                            <td>30.0 - 34.9</td>
+                            <td>High risk of type 2 diabetes, hypertension</td>
+                        </tr>
+                        <tr>
+                            <td><span class="category-indicator extreme-obese"></span>Obese Class II & III</td>
+                            <td>35.0 and above</td>
+                            <td>Very high risk of serious health conditions</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <section class="info-section">
+                <h2>Understanding Your BMI</h2>
+                
+                <h3>What is BMI?</h3>
+                <p>Body Mass Index (BMI) is a screening tool that measures your body weight relative to your height. It's calculated by dividing your weight in kilograms by the square of your height in meters (kg/m²).</p>
+                
+                <h3>Why is BMI Important?</h3>
+                <p>BMI helps identify whether you're at a healthy weight, which is important because:</p>
+                <ul>
+                    <li>Being underweight can lead to nutritional deficiencies and weakened immunity</li>
+                    <li>Being overweight increases risk of heart disease, diabetes, and stroke</li>
+                    <li>Maintaining a healthy weight reduces overall health risks</li>
+                    <li>It's a quick screening tool for potential health issues</li>
+                </ul>
+                
+                <h3>Limitations of BMI</h3>
+                <p>While BMI is useful, it has limitations:</p>
+                <ul>
+                    <li>Doesn't distinguish between muscle and fat mass</li>
+                    <li>Athletes may have high BMI due to muscle, not fat</li>
+                    <li>Doesn't account for bone density or body composition</li>
+                    <li>May not accurately reflect health for all ethnicities</li>
+                    <li>Should be used alongside other health assessments</li>
+                </ul>
+                
+                <h3>How to Improve Your BMI</h3>
+                <ul>
+                    <li>Eat a balanced diet rich in fruits, vegetables, and whole grains</li>
+                    <li>Exercise regularly - aim for 150 minutes of moderate activity per week</li>
+                    <li>Stay hydrated and get adequate sleep</li>
+                    <li>Reduce processed foods and sugary beverages</li>
+                    <li>Consult healthcare professionals for personalized advice</li>
+                </ul>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2024 BMI Calculator. Your health companion for better living.</p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">Free online BMI calculator with health recommendations and personalized insights.</p>
+            <p style="margin-top: 10px; font-size: 0.85rem; color: #999;">Disclaimer: BMI is a screening tool and should not replace professional medical advice. Consult a healthcare provider for personalized health guidance.</p>
+        </footer>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
